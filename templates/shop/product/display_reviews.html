@@ -1,0 +1,17 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block content %}
+
+    <h1>Відгуки</h1>
+    <a href="{% url 'shop:reviews' %}">Написать отзыв</a>
+    <div>
+        {% for review in reviews %}
+        <div class="review-card" style="border: 1px solid #85858548; border-radius: 10px;">
+            <p><strong>{{ review.author }}</strong></p>
+            <p>Рейтинг: {{ review.rating }}</p>
+            <p>{{ review.text }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}
+    {{ product.name }}
+{% endblock %}
+
+{% block content %}
+    <div class="product-detail">
+        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" width="300" height="300">
+        <div class="product-text">
+        <h1>{{ product.name }}</h1>
+        <h2>
+            <a href="{{ product.category.get_absolute_url }}"> {{ product.category }}</a>
+        </h2>
+        {{ product.description|linebreaks }}
+
+    <form action="{% url 'shop:new_contact' %}" method="get">
+        <button name="submit" type="submit" class="btn btn-danger">Співпрацювати</button>
+    </form>  </div></div>
+    <div class="text">
+    {{ product.text|linebreaks }}</div>
+{% endblock %}
