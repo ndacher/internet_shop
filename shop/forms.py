@@ -29,3 +29,5 @@ class ReviewForm(forms.ModelForm):
             'text': forms.Textarea(attrs={'cols': 80}),
             'author': forms.TextInput(attrs={'placeholder': 'Your name'})
         }
+
+        
